@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 f = open("input10.txt")
 x = f.readline()
-
+print('hello taha')
 G = nx.Graph()
 PrimsGraph = nx.Graph()
 

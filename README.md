@@ -8,7 +8,7 @@ This project is a starting point for our python application.
 
 ### guidelines for using the project 
 
-virtual env should be enabled for using this project in Vscode
+virtual env should be enabled as python interpreter for using this project in Vscode
 #### step1 
 run the project.py file 
 #### step2 

@@ -1,14 +1,12 @@
-from queue import PriorityQueue
-from os import read
-import networkx as nx
-import matplotlib.pyplot as plt
+
+
 
 class Graph:
     def __init__(self, vertices):
         self.V = vertices
         self.graph = []
 
-    def addedge(self, u, v, w):
+    def add_edge(self, u, v, w):
         self.graph.append([u, v, w])
 
     # Search function
@@ -30,7 +28,7 @@ class Graph:
             rank[xroot] += 1
 
     #  Applying Kruskal algorithm
-    def kruskal_algo(self, P):
+    def kruskal_algo(self):
         result = []
         i, e = 0, 0
         self.graph = sorted(self.graph, key=lambda item: item[2])
@@ -50,13 +48,3 @@ class Graph:
                 self.apply_union(parent, rank, x, y)
         for u, v, weight in result:
             print("%d - %d: %d" % (u, v, weight))
-            P.add_edge(u, v, weight=weight)
-
-        pos = nx.get_node_attributes(P,'pos')
-        labels = nx.get_edge_attributes(P,'weight')
-        print(labels)
-        nx.draw_networkx_edge_labels(P,pos,edge_labels=labels)
-        plt.figure(2)
-        nx.draw(P, pos, with_labels = True)
-        
-        print(P)
